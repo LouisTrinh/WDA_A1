@@ -1,114 +1,49 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>Advertisement</title>
+	<title>Winestore</title>
 	<link rel="stylesheet" type="text/css" href="myCss.css"/>
-	<script>
-var x=0;
-function checkForm1()
-{
-	if(document.getElementById('quantity1').value >0)
-	{		
-		return x;
-	}
-	else
-	{
-		return false;
-	}
-}
-function add1()
-{
-	x = x+1;
-	document.getElementById('quantity1').value = x;
-}
-function minus1()
-{
-	if(x>0)
-	{
-		x = x-1;
-		document.getElementById('quantity1').value = x;
-	}
-	else
-	{return false;}
-}
-function checkForm2()
-{
-	if(document.getElementById('quantity2').value >0)
-	{		
-		return x;
-	}
-	else
-	{
-		return false;
-	}
-}
-function add2()
-{
-	x = x+1;
-	document.getElementById('quantity2').value = x;
-}
-function minus2()
-{
-	if(x>0)
-	{
-		x = x-1;
-		document.getElementById('quantity2').value = x;
-	}
-	else
-	{return false;}
-}
-</script>
 </head>
 <body>
-<table id="able">
-	<tr>
-		<td><a href="assWP.html">  <img id="logo"    src="logo.png"    alt="logo"></a></td>
-		<td><a href="service.html"><img id="product" src="product.png" alt="product"></a></td>
-		<td><a href="gallery.html"><img id="gallery" src="gallery.png" alt="gallery"></a></td>
-		<td><a href="policy.html"> <img id="policy"  src="policy.png"  alt="policy"></a></td>
-	</tr>
-</table>
-	<table id="able1">
-	<tr>
-		<td> <img id="beauty"    src="loc.jpg"    alt="loc"></td>
-		<td><img id="model1"  src="acer.jpg"  alt="acer"></td>
-		
-	</tr>
-	<tr>
-		<td><p style="color:white">
-				<br/>
+
 				PRODUCT
-				<ul id="des">
-				<li>Indoor</li>
-				<li>$100/set 5 products</li>
-				</ul>
-				<form method="post" action="http://titan.csit.rmit.edu.au/~e54061/WP/form-tester.php" onsubmit="return checkForm()">
-					<input type="button" onclick="add1()" value="Add sets"/>
-					<input type="text" id="quantity1" value="0" name="quality"/>
-					<input type="hidden" id="id1" value="sets" name="time"/>
-					<input type="button" onclick="minus1()" value="Minus sets"/>
-					<input type="submit" onclick="checkForm1()" value="Submit" />
+			
+				<form method="post" action="*.php">
+					Search by Wine Name 
+					<input type="text"  value="" name="wine_name"/></br>
+					
+					Search by Winery Name
+					<input type="text"  value="" name="winery_id"/></br>
+					
+					Choose the region
+					<select name="region_id" >
+ 							<option value="1"> a </option>
+  							<option value="2"> b </option>
+  							<option value="3"> c </option>
+					</select></br>
+					
+					Choose the grape variety
+					<select name="grape_variety" >
+ 							<option value="1"> a </option>
+  							<option value="2"> b </option>
+  							<option value="3"> c </option>
+					</select></br>
+					
+					Choose the year
+					<select name="year" >
+ 							<option value="1"> a </option>
+  							<option value="2"> b </option>
+  							<option value="3"> c </option>
+					</select></br>
+					
+					Choose the number of wines in stock
+					<input type="text"  value="" name="on_hand"/></br>
+					
+					Choose the number of ordered wines
+					<input type="text"  value="" name="qty"/></br>
+					
+					<input type="submit" value="Submit" />
 				</form>
-				</td>
-		<td><p style="color:white">
-				<br/>
-				ADVERTISEMENT
-				<ul id="des1">
-				<li>Indoor</li>
-				<li>$75/product</li>
-				</ul>
-				<form method="post" action="http://titan.csit.rmit.edu.au/~e54061/WP/form-tester.php" onsubmit="return checkForm()">
-					<input type="button" onclick="add2()" value="Add products"/>
-					<input type="text" id="quantity2" value="0" name="quality"/>
-					<input type="hidden" id="id2" value="products" name="time"/>
-					<input type="button" onclick="minus2()" value="Minus products"/>
-					<input type="submit" onclick="checkForm2()" value="Submit" />
-				</form>
-				</td>
-	</tr>
-	
-</table>
-<div id="content"> This website all about photography</div>
-<div><p id="footer"> Copyright © LouisCreativePhotography.com <br></p></div>
+
 	</body>
 </html>
