@@ -17,8 +17,8 @@ while ($row = mysql_fetch_assoc($result)) {
 	$regions[$row['region_id']] = $row['region_name'];
 	}
 	
-$queryGrapeVariety = "SELECT * FROM grape_variety;";
-$result = mysql_query($queryGrapeVariety, $dbconn);
+$querygrape_variety = "SELECT * FROM grape_variety;";
+$result = mysql_query($querygrape_variety, $dbconn);
 $grape_variety = array();
 while ($row = mysql_fetch_assoc($result)) {
 	$grape_variety[$row['variety_id']] = $row['variety'];
@@ -59,9 +59,13 @@ while ($row = mysql_fetch_assoc($result)) {
 					
 					Choose the grape variety
 					<select name="grape_variety" >
- 							<option value="1"> a </option>
-  							<option value="2"> b </option>
-  							<option value="3"> c </option>
+ 							<?php
+						foreach ($grape_variety as $variety_id => $grape_variety):
+					?>
+						<option value="<?php echo $variety_id;?>"> <?php echo $grape_varietu;?> </option>
+					<?php
+						endforeach;
+					?>
 					</select></br>
 					
 					Choose the year
