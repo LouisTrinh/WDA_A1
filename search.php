@@ -15,6 +15,12 @@ $result = mysql_query($queryRegion, $dbconn);
 $regions = array();
 while ($row = mysql_fetch_assoc($result)) {
 	$regions[$row['region_id']] = $row['region_name'];
+	
+$queryGrapeVariety = "SELECT * FROM grape_variety;";
+$result = mysql_query($queryGrapeVariety, $dbconn);
+$grape_variety = array();
+while ($row = mysql_fetch_assoc($result)) {
+	$grape_variety[$row['variety_id']] = $row['variety'];
 }
 //var_dump($regions);
 
