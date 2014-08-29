@@ -23,8 +23,14 @@ $varieties = array();
 while ($row = mysql_fetch_assoc($result)) {
 	$varieties[$row['variety_id']] = $row['variety'];
 	}
-
-
+	
+ $queryYear = "SELECT * FROM wine ORDER BY DESC;";
+ $result = mysql_query($queryYear, $dbconn);
+ $years = array();
+ while ($row = mysql_fectch_assoc($result)){
+ 	$years[$row['wine_id']] = $row['year']
+ 	}
+ 
 //var_dump($regions);
 
 
@@ -71,9 +77,13 @@ while ($row = mysql_fetch_assoc($result)) {
 					
 					Choose the year
 					<select name="year" >
- 							<option value="1"> a </option>
-  							<option value="2"> b </option>
-  							<option value="3"> c </option>
+ 					<?php
+						foreach ($years as $year => $wine):
+					?>
+						<option value="<?php echo $year;?>"> <?php echo $wine;?> </option>
+					<?php
+						endforeach;
+					?>
 					</select></br>
 					
 					Choose the number of wines in stock
