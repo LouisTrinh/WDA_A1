@@ -17,11 +17,11 @@ while ($row = mysql_fetch_assoc($result)) {
 	$regions[$row['region_id']] = $row['region_name'];
 	}
 	
-$querygrape_variety = "SELECT * FROM grape_variety;";
-$result = mysql_query($querygrape_variety, $dbconn);
-$grape_variety = array();
+$queryvariety = "SELECT * FROM grape_variety;";
+$result = mysql_query($queryVariety, $dbconn);
+$varieties = array();
 while ($row = mysql_fetch_assoc($result)) {
-	$grape_variety[$row['variety_id']] = $row['variety'];
+	$varieties[$row['variety_id']] = $row['variety'];
 	}
 
 
