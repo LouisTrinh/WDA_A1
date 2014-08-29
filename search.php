@@ -58,15 +58,16 @@ while ($row = mysql_fetch_assoc($result)) {
 					</select></br>
 					
 					Choose the grape variety
-					<select name="grape_variety" >
+					<select name="variety_id" >
  							<?php
-						foreach ($grape_variety as $variety_id => $grape_variety):
+						foreach ($varieties as $variety_id => $grape_variety):
 					?>
-						<option value="<?php echo $variety_id;?>"> <?php echo $grape_varietu;?> </option>
+						<option value="<?php echo $variety_id;?>"> <?php echo $grape_variety;?> </option>
 					<?php
 						endforeach;
 					?>
 					</select></br>
+					
 					
 					Choose the year
 					<select name="year" >
