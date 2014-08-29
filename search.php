@@ -28,7 +28,7 @@ while ($row = mysql_fetch_assoc($result)) {
  $result = mysql_query($queryYear, $dbconn);
  $years = array();
  while ($row = mysql_fectch_assoc($result)){
- 	$years[$row['wine_id']] = $row['year']
+ 	$years[$row['wine_id']] = $row['year'];
  	}
  
 //var_dump($regions);
