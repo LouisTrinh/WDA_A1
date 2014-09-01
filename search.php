@@ -18,10 +18,11 @@ while ($row = mysql_fetch_assoc($result)) {
 	}
 	
 $queryVariety = "SELECT variety FROM grape_variety;";
-$result1 = mysql_query($queryVariety, $dbconn);
+$result = mysql_query($queryVariety, $dbconn);
 $varieties = array();
-while ($row = mysql_fetch_assoc($result1)) {
-	$variety[$row['variety_id']] = $row['variety'];
+while ($row = mysql_fetch_assoc($result)) {
+	$regions[$row['variety_id']] = $row['variety'];
+	}
 	}
 	
 	
