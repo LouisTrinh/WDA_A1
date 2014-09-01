@@ -23,16 +23,18 @@ $varieties = array();
 while ($row = mysql_fetch_assoc($result1)) {
 	$variety[$row['variety_id']] = $row['variety'];
 	}
-
-$queryVariety = "SELECT * FROM grape_variety;";
-$result1 = mysql_query($queryVariety, $dbconn);
-$varieties = array();
-while ($row = mysql_fetch_assoc($result1)) {
-	$variety[$row['variety_id']] = $row['variety'];
+	
+	
+$queryYear = "SELECT * FROM wine;";
+$result = mysql_query($queryYear, $dbconn);
+$years = array();
+while ($row = mysql_fetch_assoc($result)) {
+	$years[$row['wine_id']] = $row['year'];
 	}
-
-var_dump($regions);
-
+	
+	
+//var_dump($regions);
+var_dump($varieties);
 
 ?>
 <!DOCTYPE HTML>
@@ -79,12 +81,18 @@ var_dump($regions);
 					</select></br>
 					
 					
-					Choose the year
+						Choose the year
 					<select name="year" >
- 							<option value="1"> a </option>
-  							<option value="2"> b </option>
-  							<option value="3"> c </option>
+					<?php
+						foreach ($years as $wine_id => $wine):
+					?>
+						<option value="<?php echo $year;?>"> <?php echo $wine;?> </option>
+					<?php
+						endforeach;
+					?>
 					</select></br>
+					
+					
 					
 					Choose the number of wines in stock
 					<input type="text"  value="" name="on_hand"/></br>
