@@ -46,6 +46,8 @@ while ($row = mysql_fetch_assoc($result)) {
 					Search by Winery Name
 					<input type="text"  value="" name="winery_id"/></br>
 					
+					
+					
 					Choose the region
 					<select name="region_id" >
 					<?php
@@ -57,10 +59,12 @@ while ($row = mysql_fetch_assoc($result)) {
 					?>
 					</select></br>
 					
+					
+					
 					Choose the grape variety
 					<select name="variety_id" >
  							<?php
-						foreach ($grape_variety as $variety_id => $grape_variety):
+						foreach ($varieties as $variety_id => $grape_variety):
 					?>
 						<option value="<?php echo $variety_id;?>"> <?php echo $grape_variety;?> </option>
 					<?php
