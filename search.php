@@ -25,7 +25,7 @@ while ($row = mysql_fetch_assoc($result1)) {
 	}
 	
 	
-$queryYear = "SELECT DISTINCT * FROM wine ORDER BY year DESC;";
+$queryYear = "SELECT year * FROM wine ORDER BY year DESC;";
 $result = mysql_query($queryYear, $dbconn);
 $years = array();
 while ($row = mysql_fetch_assoc($result)) {
@@ -34,7 +34,7 @@ while ($row = mysql_fetch_assoc($result)) {
 	
 	
 //var_dump($regions);
-var_dump($years);
+//var_dump($years);
 
 ?>
 <!DOCTYPE HTML>
