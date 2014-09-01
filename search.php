@@ -25,7 +25,7 @@ while ($row = mysql_fetch_assoc($result1)) {
 	}
 	
 	
-$queryYear = "SELECT year FROM wine ORDER BY year DESC;";
+$queryYear = "SELECT year FROM wine GROUP BY year ORDER BY year DESC;";
 $result = mysql_query($queryYear, $dbconn);
 $years = array();
 while ($row = mysql_fetch_assoc($result)) {
