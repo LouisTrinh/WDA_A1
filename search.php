@@ -18,9 +18,9 @@ while ($row = mysql_fetch_assoc($result)) {
 	}
 	
 $queryVariety = "SELECT * FROM grape_variety;";
-$result = mysql_query($queryVariety, $dbconn);
+$result1 = mysql_query($queryVariety, $dbconn);
 $varieties = array();
-while ($row = mysql_fetch_assoc($result)) {
+while ($row = mysql_fetch_assoc($result1)) {
 	$variety[$row['variety_id']] = $row['variety'];
 	}
 
@@ -71,6 +71,7 @@ while ($row = mysql_fetch_assoc($result)) {
 						endforeach;
 					?>
 					</select></br>
+					
 					
 					Choose the year
 					<select name="year" >
