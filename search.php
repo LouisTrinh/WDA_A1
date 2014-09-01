@@ -18,15 +18,14 @@ while ($row = mysql_fetch_assoc($result)) {
 	}
 	
 $queryVariety = "SELECT variety FROM grape_variety;";
-$result = mysql_query($queryVariety, $dbconn);
+$result1 = mysql_query($queryVariety, $dbconn);
 $varieties = array();
-while ($row = mysql_fetch_assoc($result)) {
-	$regions[$row['variety_id']] = $row['variety'];
-	}
+while ($row = mysql_fetch_assoc($result1)) {
+	$variety[$row['variety_id']] = $row['variety'];
 	}
 	
 	
-$queryYear = "SELECT * FROM wine GROUP BY year ORDER BY year DESC;";
+$queryYear = "SELECT year FROM wine GROUP BY year ORDER BY year DESC;";
 $result = mysql_query($queryYear, $dbconn);
 $years = array();
 while ($row = mysql_fetch_assoc($result)) {
