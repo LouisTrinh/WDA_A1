@@ -24,8 +24,14 @@ while ($row = mysql_fetch_assoc($result1)) {
 	$variety[$row['variety_id']] = $row['variety'];
 	}
 
+$queryVariety = "SELECT * FROM grape_variety;";
+$result1 = mysql_query($queryVariety, $dbconn);
+$varieties = array();
+while ($row = mysql_fetch_assoc($result1)) {
+	$variety[$row['variety_id']] = $row['variety'];
+	}
 
-//var_dump($regions);
+var_dump($regions);
 
 
 ?>
