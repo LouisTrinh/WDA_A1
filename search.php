@@ -60,31 +60,14 @@ $result = mysql_query($queryStock, $dbconn);
     <td bgcolor="#D0D0D0">Choose the year</td>
     <td bgcolor="#D0D0D0">Choose the number of wines in stock</td>
     <td bgcolor="#D0D0D0">Choose the number of ordered wines</td>
+    <td bgcolor="#D0D0D0">Submit</td>
   </tr>
   
 				<form method="post" action="answer.php">
  <tr>
     <td align="center" bgcolor="#F0F0F0"><input type="text"  value="" name="wine_name"/></td>
-    <td align="right">${surname}</td>
-    <td align="right">${firstname}</td>
-    <td align="right">${address}</td>
-    <td align="right">${city}</td>
-    <td align="right">${state}</td>
-    <td align="right">${zipcode}</td>
-    <td align="right">${phone}</td>
-    <td align="right">${birthdate}</td>
-  </tr>				
-					Search by Wine Name 
-					<input type="text"  value="" name="wine_name"/>
-							
-					
-					Search by Winery Name
-					<input type="text"  value="" name="winery_id"/></br>
-					
-					
-					
-					Choose the region
-					<select name="region_id" >
+    <td align="right"><input type="text"  value="" name="winery_id"/></br></td>
+    <td align="right"><select name="region_id" >
 					<?php
 						foreach ($regions as $region_id => $region):
 					?>
@@ -92,12 +75,9 @@ $result = mysql_query($queryStock, $dbconn);
 					<?php
 						endforeach;
 					?>
-					</select></br>
-					
-					
-					
-					Choose the grape variety
-					<select name="variety_id" >
+					</select>
+					</td>
+    <td align="right"><select name="variety_id" >
  					<?php
 						foreach ($varieties as $variety_id => $grape_variety):
 					?>
@@ -105,11 +85,9 @@ $result = mysql_query($queryStock, $dbconn);
 					<?php
 						endforeach;
 					?>
-					</select></br>
-					
-					
-						Choose the year
-					<select name="year" >
+					</select>
+					</td>
+    <td align="right"><select name="year" >
 					<?php
 						foreach ($years as $wine_id => $wine):
 					?>
@@ -117,19 +95,42 @@ $result = mysql_query($queryStock, $dbconn);
 					<?php
 						endforeach;
 					?>
-					</select></br>
+					</select>
+					</td>
+    <td align="right"><input type="text"  value="" name="on_hand"/></td>
+    <td align="right"><input type="text"  value="" name="qty"/></br></td>
+    <td align="right"><input type="submit" value="Submit" /></td>
+   
+  </tr>				
+			
+					
+					
+					
+					
+					
+					Choose the region
+					</br>
+					
+					
+					
+					Choose the grape variety
+					</br>
+					
+					
+						Choose the year
+					</br>
 					
 					
 					
 					Choose the number of wines in stock
-					<input type="text"  value="" name="on_hand"/>
+					
 					</br>
 					
 					
 					Choose the number of ordered wines
-					<input type="text"  value="" name="qty"/></br>
 					
-					<input type="submit" value="Submit" />
+					
+					
 				</form>
 
 	</body>
