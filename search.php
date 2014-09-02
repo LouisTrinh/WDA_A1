@@ -99,7 +99,8 @@ $result = mysql_query($queryStock, $dbconn);
 					</td>
     <td align="right"><input type="text"  value="" name="on_hand"/></td>
     <td align="right"><input type="text"  value="" name="qty"/></br></td>
-    <td align="right"><input type="submit" value="Submit" /></td>
+    
+    <td align="right"><input type="submit" value="Submit" name="submit" /></td>
    
   </tr>				
 </form>
