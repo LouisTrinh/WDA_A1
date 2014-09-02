@@ -10,6 +10,12 @@ if(!mysql_select_db(DB_NAME, $dbconn)) {
 	exit;
 }
 
+$queryWine = "SELECT * FROM wine WHERE wine_name LIKE '%wine_name%'";
+$result= mysql_query($queryWine, $dbconn);
+$wines=array();
+while ($row = mysql_fetch_assoc($result)
+	$wine[$row['wine_id']]= $row['wine_name']
+
 $queryRegion = "SELECT * FROM region;";
 $result = mysql_query($queryRegion, $dbconn);
 $regions = array();
@@ -18,9 +24,9 @@ while ($row = mysql_fetch_assoc($result)) {
 	}
 	
 $queryVariety = "SELECT * FROM grape_variety;";
-$result1 = mysql_query($queryVariety, $dbconn);
+$result = mysql_query($queryVariety, $dbconn);
 $varieties = array();
-while ($row = mysql_fetch_assoc($result1)) {
+while ($row = mysql_fetch_assoc($result)) {
 	$variety[$row['variety_id']] = $row['variety'];
 	}
 	
@@ -32,6 +38,9 @@ while ($row = mysql_fetch_assoc($result)) {
 	$years[$row['wine_id']] = $row['year'];
 	}
 	
+$queryStock = "SELECT * FROM items GROUP BY wine_id ;";
+$result = mysql_query($queryStock, $dbconn);
+
 	
 //var_dump($regions);
 //var_dump($varieties);
@@ -48,8 +57,18 @@ while ($row = mysql_fetch_assoc($result)) {
 				PRODUCT
 			
 				<form method="post" action="answer.php">
+				
 					Search by Wine Name 
-					<input type="text"  value="" name="wine_name"/></br>
+					<input type="text"  value="" name="wine_name">
+					<?php
+						foreach ($wines as $wine_id => $wine):
+					?>
+						<option value="<?php echo $wine_id;?>"> <?php echo $wine;?> </option>
+					<?php
+						endforeach;
+					?>
+					</input></br>
+					
 					
 					Search by Winery Name
 					<input type="text"  value="" name="winery_id"/></br>
@@ -95,7 +114,12 @@ while ($row = mysql_fetch_assoc($result)) {
 					
 					
 					Choose the number of wines in stock
-					<input type="text"  value="" name="on_hand"/></br>
+					<input type="text"  value="qty" name="on_hand"/>
+					<?php
+						$query = $_GET ['queryStock'];
+						
+					</br>
+					
 					
 					Choose the number of ordered wines
 					<input type="text"  value="" name="qty"/></br>
