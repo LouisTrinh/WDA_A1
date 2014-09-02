@@ -161,9 +161,40 @@ __HAVING__
 			echo "Couldn't Find Any Wine";
 		}
 		else {
+		?>
+		<table>
+			<tr>
+			    <td bgcolor="#D0D0D0">Wine Name </td>
+				<td bgcolor="#D0D0D0">Winery Name</td>
+				<td bgcolor="#D0D0D0">Region</td>
+				<td bgcolor="#D0D0D0">Grape Variety</td>
+				<td bgcolor="#D0D0D0">Year</td>
+				<td bgcolor="#D0D0D0">Number of wines in stock</td>
+				<td bgcolor="#D0D0D0">Number of ordered wines</td>
+				<td bgcolor="#D0D0D0">Cost </td>
+				<td bgcolor="#D0D0D0">Sale Revenue </td>
+			</tr>
+		<?php
 			foreach ($wines as $wine){
-				var_dump($wine);
+			?>
+			
+			<tr>
+				<td><?php echo $wine['wine_name'];?></td>
+				<td><?php echo $wine['winery_name'];?></td>
+				<td><?php echo $wine['region_name'];?></td>
+				<td><?php echo $wine['grape_varieties'];?></td>
+				<td><?php echo $wine['year'];?></td>
+				<td><?php echo $wine['on_hand'];?></td>
+				<td><?php echo $wine['total_stocks_sold'];?></td>
+				<td><?php echo $wine['cost'];?></td>
+				<td><?php echo $wine['sale_revenue'];?></td>
+			</tr>
+			
+			<?php	
 			} 
+		?>
+		</table>
+		<?php
 		}
 	
 	} 
