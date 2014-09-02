@@ -63,7 +63,7 @@ $result = mysql_query($queryStock, $dbconn);
     <td bgcolor="#D0D0D0">Submit</td>
   </tr>
   
-				<form method="post" action="answer.php">
+<form method="post" action="answer.php">
  <tr>
     <td align="center" bgcolor="#F0F0F0"><input type="text"  value="" name="wine_name"/></td>
     <td align="right"><input type="text"  value="" name="winery_id"/></br></td>
@@ -102,36 +102,7 @@ $result = mysql_query($queryStock, $dbconn);
     <td align="right"><input type="submit" value="Submit" /></td>
    
   </tr>				
-			
-					
-					
-					
-					
-					
-					Choose the region
-					</br>
-					
-					
-					
-					Choose the grape variety
-					</br>
-					
-					
-						Choose the year
-					</br>
-					
-					
-					
-					Choose the number of wines in stock
-					
-					</br>
-					
-					
-					Choose the number of ordered wines
-					
-					
-					
-				</form>
+</form>
 
 	</body>
 </html>

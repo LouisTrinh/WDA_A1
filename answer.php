@@ -49,4 +49,7 @@
         	$qty = ""; 
         }
 }
+	else {
+	"Cannot Find Any Wine";
+	}
 ?>
