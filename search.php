@@ -23,7 +23,7 @@ $queryVariety = "SELECT * FROM grape_variety;";
 $result = mysql_query($queryVariety, $dbconn);
 $varieties = array();
 while ($row = mysql_fetch_assoc($result)) {
-	$variety[$row['variety_id']] = $row['variety'];
+	$varieties[$row['variety_id']] = $row['variety'];
 	}
 	
 	
