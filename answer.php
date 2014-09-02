@@ -50,6 +50,6 @@
         }
 }
 	else {
-	"Cannot Find Any Wine";
+		echo "Cannot Find Any Wine";
 	}
 ?>
