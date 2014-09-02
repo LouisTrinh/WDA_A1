@@ -131,7 +131,7 @@ __HAVING__
 		elseif ($cost1 =='' && $cost2 !=''){
 			$having[] ='total_stocks_sold <= '.$cost2;
 		}
-		else{
+		elseif ($cost1 !='' && $cost2 !=''){
 			$having[] ='total_stocks_sold BETWEEN '.$cost1.' AND '.$cost2;
 		}
 		
