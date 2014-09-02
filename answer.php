@@ -130,6 +130,9 @@ __HAVING__
 		if ($region_id != '' && $region_id != 1 ){
 			$having[]= 'region.region_id = '.$region_id;
 		}
+		if ($variety_id != ''){
+			$having[]= 'grape_varieties LIKE "%'.$variety_id.'%"';
+		}
 		if ($on_hand !=''){
 			$having[] ='inventory.on_hand >= '.$on_hand;
 		}
