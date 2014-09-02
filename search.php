@@ -51,9 +51,29 @@ $result = mysql_query($queryStock, $dbconn);
 <body>
 
 				PRODUCT
-			
+<table border="1" cellpadding="3" cellspacing="0">
+  <tr>
+    <td bgcolor="#D0D0D0">Search by Wine Name </td>
+    <td bgcolor="#D0D0D0">Search by Winery Name</td>
+    <td bgcolor="#D0D0D0">Choose the region</td>
+    <td bgcolor="#D0D0D0">Choose the grape variety</td>
+    <td bgcolor="#D0D0D0">Choose the year</td>
+    <td bgcolor="#D0D0D0">Choose the number of wines in stock</td>
+    <td bgcolor="#D0D0D0">Choose the number of ordered wines</td>
+  </tr>
+  
 				<form method="post" action="answer.php">
-				
+ <tr>
+    <td align="center" bgcolor="#F0F0F0"><input type="text"  value="" name="wine_name"/></td>
+    <td align="right">${surname}</td>
+    <td align="right">${firstname}</td>
+    <td align="right">${address}</td>
+    <td align="right">${city}</td>
+    <td align="right">${state}</td>
+    <td align="right">${zipcode}</td>
+    <td align="right">${phone}</td>
+    <td align="right">${birthdate}</td>
+  </tr>				
 					Search by Wine Name 
 					<input type="text"  value="" name="wine_name"/>
 							
@@ -102,8 +122,7 @@ $result = mysql_query($queryStock, $dbconn);
 					
 					
 					Choose the number of wines in stock
-					<input type="text"  value="qty" name="on_hand"/>
-					
+					<input type="text"  value="" name="on_hand"/>
 					</br>
 					
 					
