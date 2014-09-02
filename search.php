@@ -10,11 +10,7 @@ if(!mysql_select_db(DB_NAME, $dbconn)) {
 	exit;
 }
 
-$queryWine = "SELECT * FROM wine WHERE wine_name LIKE '%wine_name%'";
-$result= mysql_query($queryWine, $dbconn);
-$wines=array();
-while ($row = mysql_fetch_assoc($result)
-	$wine[$row['wine_id']]= $row['wine_name']
+
 
 $queryRegion = "SELECT * FROM region;";
 $result = mysql_query($queryRegion, $dbconn);
@@ -37,9 +33,7 @@ $years = array();
 while ($row = mysql_fetch_assoc($result)) {
 	$years[$row['wine_id']] = $row['year'];
 	}
-	
-$queryStock = "SELECT * FROM items GROUP BY wine_id ;";
-$result = mysql_query($queryStock, $dbconn);
+
 
 	
 //var_dump($regions);
