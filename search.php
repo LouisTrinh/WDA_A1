@@ -59,16 +59,8 @@ $result = mysql_query($queryStock, $dbconn);
 				<form method="post" action="answer.php">
 				
 					Search by Wine Name 
-					<input type="text"  value="" name="wine_name">
-					<?php
-						foreach ($wines as $wine_id => $wine):
-					?>
-						<option value="<?php echo $wine_id;?>"> <?php echo $wine;?> </option>
-					<?php
-						endforeach;
-					?>
-					</input></br>
-					
+					<input type="text"  value="" name="wine_name"/>
+							
 					
 					Search by Winery Name
 					<input type="text"  value="" name="winery_id"/></br>
