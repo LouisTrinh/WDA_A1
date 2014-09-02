@@ -33,7 +33,9 @@ $years = array();
 while ($row = mysql_fetch_assoc($result)) {
 	$years[$row['wine_id']] = $row['year'];
 	}
-
+	
+$queryStock = "SELECT * FROM items GROUP BY wine_id ;";
+$result = mysql_query($queryStock, $dbconn);
 
 	
 //var_dump($regions);
@@ -101,9 +103,7 @@ while ($row = mysql_fetch_assoc($result)) {
 					
 					Choose the number of wines in stock
 					<input type="text"  value="qty" name="on_hand"/>
-					<?php
-						$query = $_GET ['queryStock'];
-						
+					
 					</br>
 					
 					
