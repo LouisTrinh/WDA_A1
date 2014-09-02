@@ -143,13 +143,13 @@ __HAVING__
 			$having[] ='total_stocks_sold >= '.$total_stocks_sold;
 		}
 		if ($cost1 !='' && $cost2 ==''){
-			$having[] ='total_stocks_sold >= '.$cost1;
+			$having[] ='inventory.cost >= '.$cost1;
 		}
 		elseif ($cost1 =='' && $cost2 !=''){
-			$having[] ='total_stocks_sold <= '.$cost2;
+			$having[] ='inventory.cost <= '.$cost2;
 		}
 		elseif ($cost1 !='' && $cost2 !=''){
-			$having[] ='total_stocks_sold BETWEEN '.$cost1.' AND '.$cost2;
+			$having[] ='inventory.cost BETWEEN '.$cost1.' AND '.$cost2;
 		}
 		
 		$havingClause = '';
