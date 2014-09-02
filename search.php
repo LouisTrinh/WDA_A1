@@ -64,12 +64,10 @@ $result = mysql_query($queryStock, $dbconn);
     <td bgcolor="#D0D0D0">Search by Winery Name</td>
     <td bgcolor="#D0D0D0">Choose the region</td>
     <td bgcolor="#D0D0D0">Choose the grape variety</td>
-    <td bgcolor="#D0D0D0">Choose the year from</td>
-    <td bgcolor="#D0D0D0">To </td>
+    <td bgcolor="#D0D0D0">Choose the year range</td>
     <td bgcolor="#D0D0D0">Choose the number of wines in stock</td>
     <td bgcolor="#D0D0D0">Choose the number of ordered wines</td>
-    <td bgcolor="#D0D0D0">Choose the cost range from </td>
-    <td bgcolor="#D0D0D0">to</td>
+    <td bgcolor="#D0D0D0">Choose the cost range </td>
     
     <td bgcolor="#D0D0D0">Submit</td>
   </tr>
@@ -107,8 +105,8 @@ $result = mysql_query($queryStock, $dbconn);
 						endforeach;
 					?>
 					</select>
-					</td>
-	<td align="right"><select name="year2" >
+					
+					<select name="year2" >
 					<?php
 						foreach ($years as $wine_id => $wine):
 					?>
@@ -120,8 +118,8 @@ $result = mysql_query($queryStock, $dbconn);
 					</td>
     <td align="right"><input type="text"  value="" name="on_hand"/></td>
     <td align="right"><input type="text"  value="" name="qty"/></br></td>
-    <td align="right"><input type="text"  value="" name="cost1"/></br></td>
-    <td align="right"><input type="text"  value="" name="cost2"/></br></td>
+    <td align="right"><input type="text"  value="" name="cost1"/><input type="text"  value="" name="cost2"/></td>
+  
     
     <td align="right"><input type="submit" value="Submit" name="submit" /></td>
    
