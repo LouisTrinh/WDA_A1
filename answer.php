@@ -124,10 +124,10 @@ __HAVING__
 	
 
 		$having = array();
-		if ($winery_name != ''){
-			$having[]= 'winery.winery_name LIKE "%'.$winery_name.'%"';
-			}
-		if ($region_id != ''){
+		if ($winery_id != ''){
+			$having[]= 'winery.winery_name LIKE "%'.$winery_id.'%"';
+		}
+		if ($region_id != '' && $region_id != 1 ){
 			$having[]= 'region.region_id = '.$region_id;
 		}
 		if ($on_hand !=''){
