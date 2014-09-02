@@ -2,67 +2,67 @@
     if (isset($_POST['submit'])) {
     
         if (isset($_POST['wine_name'])) {
-            $wine_name = mysql_real_escape_string($_POST['wine_name']);
+            $wine_name = ($_POST['wine_name']);
         } else {
         	$wine_name = ""; 
         }
         
         
         if (isset($_POST['winery_id'])) {
-            $winery_id = mysql_real_escape_string($_POST['winery_id']);
+            $winery_id = ($_POST['winery_id']);
         } else {
         	$winery_id = ""; 
         }
         	
         	
         if (isset($_POST['region_id'])) {
-            $region_id = mysql_real_escape_string($_POST['region_id']);
+            $region_id = ($_POST['region_id']);
         } else {
         	$region_id = ""; 
         }
         
         
         if (isset($_POST['variety_id'])) {
-            $variety_id = mysql_real_escape_string($_POST['variety_id']);
+            $variety_id = ($_POST['variety_id']);
         } else {
         	$variety_id = ""; 
         }
         
         
         if (isset($_POST['year1'])) {
-            $year1 = mysql_real_escape_string($_POST['year1']);
+            $year1 = ($_POST['year1']);
         } else {
         	$year1 = ""; 
         }
         
          if (isset($_POST['year2'])) {
-            $year2 = mysql_real_escape_string($_POST['year2']);
+            $year2 = ($_POST['year2']);
         } else {
         	$year2 = ""; 
         }
         
         if (isset($_POST['on_hand'])) {
-            $on_hand = mysql_real_escape_string($_POST['on_hand']);
+            $on_hand = ($_POST['on_hand']);
         } else {
         	$on_hand = ""; 
         }
         
         
         if (isset($_POST['qty'])) {
-            $qty = mysql_real_escape_string($_POST['qty']);
+            $qty = ($_POST['qty']);
         } else {
         	$qty = ""; 
         }
         
         
         if (isset($_POST['cost1'])) {
-            $cost1 = mysql_real_escape_string($_POST['cost1']);
+            $cost1 = ($_POST['cost1']);
         } else {
         	$cost1 = ""; 
         }
         
         if (isset($_POST['cost2'])) {
-            $cost2 = mysql_real_escape_string($_POST['cost2']);
+            $cost2 = ($_POST['cost2']);
         } else {
         	$cost2 = ""; 
         }
