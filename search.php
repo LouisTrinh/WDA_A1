@@ -25,7 +25,7 @@ while ($row = mysql_fetch_assoc($result1)) {
 	}
 	
 	
-$queryYear = "SELECT DISTINCT year FROM wine JOIN BY year ORDER BY year DESC;";
+$queryYear = "SELECT DISTINCT * FROM wine JOIN BY year ORDER BY year DESC;";
 $result = mysql_query($queryYear, $dbconn);
 $years = array();
 while ($row = mysql_fetch_assoc($result)) {
