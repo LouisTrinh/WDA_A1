@@ -1,9 +1,7 @@
 <?php
-require_once('db_pdo.php');
-
+require_once('db.php');
 try {
-  $pdo = new PDO($dsn, DB_USER, DB_PW);
-  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$dsn = DB_ENGINE .':host='. DB_HOST .';dbname='. DB_NAME; $db = new PDO($dsn, DB_USER, DB_PW);
 
 require_once 'MiniTemplator.class.php';
 $t = new MiniTemplator; 
@@ -85,8 +83,5 @@ $t->addBlock('td');
 //var_dump($varieties);
 $t->generateOutput(); 
 
-$pdo = null;
-} catch (PDOException $e) {
-  echo $e->getMessage();
-  exit;
-}
+$db = null; // close the database connection } catch(PDOException $e) {
+echo $e­>getMessage(); }
