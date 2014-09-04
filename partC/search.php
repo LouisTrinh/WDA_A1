@@ -41,16 +41,37 @@ $queryVariety = "SELECT * FROM grape_variety;";
 $result = mysql_query($queryVariety, $dbconn);
 $varieties = array();
 while ($row = mysql_fetch_assoc($result)) {
-	$varieties[$row['variety']] = $row['variety'];
-	}
-	
+	//$varieties[$row['variety']] = $row['variety'];
+	$t->setVariable('option_value', $row['variety']);
+	$t->setVariable('option_text', $row['variety']
+	$t->addBlock ('option');
+}
+$t->setVariable('select_name','variety_id');
+$t->addBlock('select');
+$t->addBlock('td');	
 	
 $queryYear = "SELECT DISTINCT * FROM wine GROUP BY year ORDER BY year DESC;";
 $result = mysql_query($queryYear, $dbconn);
 $years = array();
 while ($row = mysql_fetch_assoc($result)) {
-	$years[$row['wine_id']] = $row['year'];
-	}
+	$years[$row['year']] = $row['year'];
+	$t->setVariable('option_value', $row['year'])
+	$t->setVariable('option_text', $row['year']);
+	$t->addBlock('option');
+}
+$t->setVariable('select_name','year1');
+$t->addBlock('select');
+
+foreach($years as $year){
+	$t->setVariable('option_value', $row['year'])
+	$t->setVariable('option_text', $row['year']);
+	$t->addBlock('option');
+}
+$t->setVariable('select_name','year2');
+$t->addBlock('select');
+
+$t->addBlock('td');	
+
 
 $queryCost = "SELECT DISTINCT * FROM inventory GROUP BY cost ORDER BY cost DESC;";
 $result = mysql_query($queryCost, $dbconn);

@@ -31,7 +31,7 @@ $queryYear = "SELECT DISTINCT * FROM wine GROUP BY year ORDER BY year DESC;";
 $result = mysql_query($queryYear, $dbconn);
 $years = array();
 while ($row = mysql_fetch_assoc($result)) {
-	$years[$row['wine_id']] = $row['year'];
+	$years[$row['year']] = $row['year'];
 	}
 
 $queryCost = "SELECT DISTINCT * FROM inventory GROUP BY cost ORDER BY cost DESC;";
@@ -98,9 +98,9 @@ $result = mysql_query($queryStock, $dbconn);
 					</td>
     <td align="right"><select name="year1" >
 					<?php
-						foreach ($years as $wine_id => $wine):
+						foreach ($years as $year):
 					?>
-						<option value="<?php echo $year;?>"> <?php echo $wine;?> </option>
+						<option value="<?php echo $year;?>"> <?php echo $year;?> </option>
 					<?php
 						endforeach;
 					?>
@@ -108,9 +108,9 @@ $result = mysql_query($queryStock, $dbconn);
 					
 					<select name="year2" >
 					<?php
-						foreach ($years as $wine_id => $wine):
+						foreach ($years as $year):
 					?>
-						<option value="<?php echo $year;?>"> <?php echo $wine;?> </option>
+						<option value="<?php echo $year;?>"> <?php echo $year;?> </option>
 					<?php
 						endforeach;
 					?>
