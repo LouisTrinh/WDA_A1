@@ -162,47 +162,30 @@ __HAVING__
 		$wines = array();
 		while ($row = mysql_fetch_assoc($result)) {
 			$wines []= $row;
-		}	
+		}
+		require_once 'MiniTemplator.class.php';
+		$t = new MiniTemplator; 
+		$t->readTemplateFromFile ("answer.html");	
+		
 		if (count ($wines) == 0){
-			echo "No Records Match Your Search Criteria";
+			$t->addBlock('noresult');
 		}
 		else {
-		?>
-		<table>
-			<tr>
-			    <td bgcolor="#D0D0D0">Wine Name </td>
-				<td bgcolor="#D0D0D0">Winery Name</td>
-				<td bgcolor="#D0D0D0">Region</td>
-				<td bgcolor="#D0D0D0">Grape Variety</td>
-				<td bgcolor="#D0D0D0">Year</td>
-				<td bgcolor="#D0D0D0">Number of wines in stock</td>
-				<td bgcolor="#D0D0D0">Number of ordered wines</td>
-				<td bgcolor="#D0D0D0">Cost </td>
-				<td bgcolor="#D0D0D0">Sale Revenue </td>
-			</tr>
-		<?php
 			foreach ($wines as $wine){
-			?>
-			
-			<tr>
-				<td><?php echo $wine['wine_name'];?></td>
-				<td><?php echo $wine['winery_name'];?></td>
-				<td><?php echo $wine['region_name'];?></td>
-				<td><?php echo $wine['grape_varieties'];?></td>
-				<td><?php echo $wine['year'];?></td>
-				<td><?php echo $wine['on_hand'];?></td>
-				<td><?php echo $wine['total_stocks_sold'];?></td>
-				<td><?php echo $wine['cost'];?></td>
-				<td><?php echo $wine['sale_revenue'];?></td>
-			</tr>
-			
-			<?php	
+				$t->setVariable('wine_name', $wine['wine_name']);
+				$t->setVariable('winery_name', $wine['winery_name']);
+				$t->setVariable('region_name', $wine['region_name']);
+				$t->setVariable('grape_varieties', $wine['grape_varieties']);
+				$t->setVariable('year', $wine['year']);
+				$t->setVariable('on_hand', $wine['on_hand']);
+				$t->setVariable('total_stocks_sold', $wine['total_stocks_sold']);
+				$t->setVariable('cost', $wine['cost']);
+				$t->setVariable('sale_revenue', $wine['sale_revenue']);
+				$t->addBlock('tr');
 			} 
-		?>
-		</table>
-		<?php
+			$t->addBlock('table');
 		}
-	
+		$t->generateOutput(); 
 	} 
 	else {
 		header('Location: search.php');
