@@ -43,7 +43,7 @@ $varieties = array();
 while ($row = mysql_fetch_assoc($result)) {
 	//$varieties[$row['variety']] = $row['variety'];
 	$t->setVariable('option_value', $row['variety']);
-	$t->setVariable('option_text', $row['variety']
+	$t->setVariable('option_text', $row['variety']);
 	$t->addBlock ('option');
 }
 $t->setVariable('select_name','variety_id');
@@ -55,7 +55,7 @@ $result = mysql_query($queryYear, $dbconn);
 $years = array();
 while ($row = mysql_fetch_assoc($result)) {
 	$years[$row['year']] = $row['year'];
-	$t->setVariable('option_value', $row['year'])
+	$t->setVariable('option_value', $row['year']);
 	$t->setVariable('option_text', $row['year']);
 	$t->addBlock('option');
 }
@@ -63,7 +63,7 @@ $t->setVariable('select_name','year1');
 $t->addBlock('select');
 
 foreach($years as $year){
-	$t->setVariable('option_value', $row['year'])
+	$t->setVariable('option_value', $row['year']);
 	$t->setVariable('option_text', $row['year']);
 	$t->addBlock('option');
 }
