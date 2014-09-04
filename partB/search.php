@@ -34,15 +34,6 @@ while ($row = mysql_fetch_assoc($result)) {
 	$years[$row['year']] = $row['year'];
 	}
 
-$queryCost = "SELECT DISTINCT * FROM inventory GROUP BY cost ORDER BY cost DESC;";
-$result = mysql_query($queryCost, $dbconn);
-$costs = array();
-while ($row = mysql_fetch_assoc($result)) {
-	$costs[$row['inventory_id']] = $row['cost'];
-	}
-	
-$queryStock = "SELECT * FROM items GROUP BY wine_id ;";
-$result = mysql_query($queryStock, $dbconn);
 
 	
 //var_dump($regions);

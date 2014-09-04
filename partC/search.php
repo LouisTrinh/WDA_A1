@@ -72,17 +72,19 @@ $t->addBlock('select');
 
 $t->addBlock('td');	
 
+$t->setVariable('input_name', 'on_hand');
+$t->addBlock('input');
+$t->addBlock('td');
 
-$queryCost = "SELECT DISTINCT * FROM inventory GROUP BY cost ORDER BY cost DESC;";
-$result = mysql_query($queryCost, $dbconn);
-$costs = array();
-while ($row = mysql_fetch_assoc($result)) {
-	$costs[$row['inventory_id']] = $row['cost'];
-	}
-	
-$queryStock = "SELECT * FROM items GROUP BY wine_id ;";
-$result = mysql_query($queryStock, $dbconn);
+$t->setVariable('input_name', 'qty');
+$t->addBlock('input');
+$t->addBlock('td');
 
+$t->setVariable('input_name', 'cost1');
+$t->addBlock('input');
+$t->setVariable('input_name', 'cost2');
+$t->addBlock('input');
+$t->addBlock('td');
 	
 //var_dump($regions);
 //var_dump($varieties);
