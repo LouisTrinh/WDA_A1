@@ -5,9 +5,9 @@
  */
 
 define('DB_NAME',   'winestore');
-define('DB_USER',   'winestore');
-define('DB_PW',     'secret');
+define('DB_USER',   'webadmin');
+define('DB_PW',     'webadmin');
 $databaseName=DB_NAME;
-$hostName='goanna.cs.rmit.edu.au';
+$hostName='localhost';
 $dsn = "mysql:dbname=$databaseName;host=$hostName;port=52247";
 ?>

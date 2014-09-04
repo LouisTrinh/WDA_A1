@@ -81,7 +81,13 @@
         	echo " MinCost must be less than MaxCost";
         	exit;
         }        
-        
+        require_once('db_pdo.php');
+
+	try {
+  		$pdo = new PDO($dsn, DB_USER, DB_PW);
+  		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+  		
         $query= 'SELECT 
 	wine.wine_name,
 	GROUP_CONCAT(DISTINCT grape_variety.variety) "grape_varieties",
@@ -186,7 +192,11 @@ __HAVING__
 			$t->addBlock('table');
 		}
 		$t->generateOutput(); 
-	} 
+	} catch (PDOException $e) {
+  echo $e->getMessage();
+  exit;
+}
+} 
 	else {
 		header('Location: search.php');
 		exit();
