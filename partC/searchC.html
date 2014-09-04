@@ -1,0 +1,50 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Winestore</title>
+	<link rel="stylesheet" type="text/css" href="myCss.css"/>
+</head>
+<body>
+
+				PRODUCT
+<table border="1" cellpadding="3" cellspacing="0">
+  <tr>
+    <td bgcolor="#D0D0D0">Search by Wine Name </td>
+    <td bgcolor="#D0D0D0">Search by Winery Name</td>
+    <td bgcolor="#D0D0D0">Choose the region</td>
+    <td bgcolor="#D0D0D0">Choose the grape variety</td>
+    <td bgcolor="#D0D0D0">Choose the year range</td>
+    <td bgcolor="#D0D0D0">Choose the number of wines in stock</td>
+    <td bgcolor="#D0D0D0">Choose the number of ordered wines</td>
+    <td bgcolor="#D0D0D0">Choose the cost range </td>
+    
+    <td bgcolor="#D0D0D0">Submit</td>
+  </tr>
+  
+<form method="post" action="answer.php">
+
+ <tr>
+  	<!-- $BeginBlock td -->
+  	<td align="center">
+  		<!-- $BeginBlock input -->
+  		<input name="${input_name}" value="" type="text" /><br/>
+  		<!-- $EndBlock input -->
+  		
+  		<!-- $BeginBlock select -->
+  		<select name="${select_name}">
+  			<!-- $BeginBlock option -->
+  			<option value="${option_value}">${option_text}</option>
+  			<!-- $EndBlock option -->
+  		</select>
+  		<!-- $EndBlock select -->
+  	</td>
+  	<!-- $EndBlock td -->
+    <td align="right"><input type="submit" value="Submit" name="submit" /></td>
+   
+  </tr>
+			
+</form>
+
+	</body>
+</html>
