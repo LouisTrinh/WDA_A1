@@ -63,9 +63,8 @@ $t->setVariable('select_name','year1');
 $t->addBlock('select');
 
 foreach($years as $year){
-	$years[$row['year']] = $row['year'];
-	$t->setVariable('option_value', $row['year']);
-	$t->setVariable('option_text', $row['year']);
+	$t->setVariable('option_value', $year);
+	$t->setVariable('option_text', $year);
 	$t->addBlock('option');
 }
 $t->setVariable('select_name','year2');
